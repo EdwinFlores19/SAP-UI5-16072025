@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi everyone</title>
+</head>
+<body>
+    <h1>Welcome to SAP UI5 UPDATED</h1>
+    <p>This is a simple UI5 application.</p>
+    <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-async="true"
+            data-sap-ui-resource-roots='{"sap.ui.demo.basic": "./"}'
+            data-sap-ui-on-init="module:com/sap/ui/demo/basic/Component"
+
+    ></script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.MessageToast.show("Hello, SAP UI5!");
+        });
+    </script>
+</body>
+</html>

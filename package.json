@@ -1,0 +1,21 @@
+{
+  "name": "sap-ui5",
+  "version": "1.0.0",
+  "description": "UI5 Primera Version",
+  "license": "ISC",
+  "author": "",
+  "keywords": [
+    "SAPUI5",
+    "UI5",
+    "JavaScript",
+    "Web Development"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "npx fiori run --open index.html"
+  },
+  "devDependencies": {
+    "@sap/ux-ui5-tooling": "^1.18.2",
+    "@ui5/cli": "^4.0.20"
+  }
+}
