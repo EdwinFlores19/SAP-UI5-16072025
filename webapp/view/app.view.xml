@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="com.logaligroup.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <!-- 
+        Esta es la vista raíz (Root View).
+        Su único propósito es contener el control sap.m.App, que actúa como 
+        el contenedor principal para todas las demás vistas de la aplicación.
+        El router colocará las vistas (como StockOverview) dentro de este control.
+    -->
+    <App id="app"/>
+
+</mvc:View>

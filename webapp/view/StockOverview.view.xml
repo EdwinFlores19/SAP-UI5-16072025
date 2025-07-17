@@ -1,0 +1,85 @@
+<mvc:View
+    controllerName="com.logaligroup.controller.StockOverview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="stockPage" title="{i18n>stockOverviewTitle}">
+        <content>
+            <Table
+                id="stockTable"
+                inset="false"
+                items="{
+                    path: '/StockSet',
+                    sorter: {
+                        path: 'MaterialText'
+                    }
+                }"
+                class="sapUiResponsiveMargin"
+                width="auto">
+                
+                <headerToolbar>
+                    <Toolbar id="stockToolbar">
+                        <Title id="stockTitle" text="{i18n>stockDetailTitle}" level="H2"/>
+                        <ToolbarSpacer id="toolbarSpacer"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="colMaterial" width="12em">
+                        <Text id="lblMaterial" text="{i18n>materialColumn}" />
+                    </Column>
+                    <Column id="colDescription">
+                        <Text id="lblDescription" text="{i18n>descriptionColumn}" />
+                    </Column>
+                    <Column id="colStock" hAlign="End">
+                        <Text id="lblStock" text="{i18n>stockColumn}" />
+                    </Column>
+                    <Column id="colStatus" hAlign="Center" width="8em">
+                        <Text id="lblStatus" text="{i18n>statusColumn}" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="stockListItem" vAlign="Middle">
+                        <cells>
+                            <!-- Celda para el número y centro del material -->
+                            <ObjectIdentifier
+                                id="objIdMaterial"
+                                title="{MaterialNumber}"
+                                text="{Plant}" />
+                            
+                            <!-- Celda para la descripción del material -->
+                            <Text id="txtDescription" text="{MaterialText}" />
+
+                            <!-- Celda para la cantidad de stock. -->
+                            <ObjectNumber
+                                id="objNumberStock"
+                                number="{
+                                    parts: ['UnrestrictedStock', 'BaseUnit'],
+                                    type: 'sap.ui.model.type.Unit',
+                                    formatOptions: { showMeasure: false }
+                                }"
+                                unit="{BaseUnit}"
+                                state="{
+                                    path: 'UnrestrictedStock',
+                                    formatter: '.formatter.formatStockState'
+                                }" />
+                            
+                            <!-- Celda para el estado visual del stock -->
+                            <ObjectStatus
+                                id="objStatusStock"
+                                text="{
+                                    path: 'UnrestrictedStock',
+                                    formatter: '.formatter.formatStockStatusText'
+                                }"
+                                state="{
+                                    path: 'UnrestrictedStock',
+                                    formatter: '.formatter.formatStockState'
+                                }" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

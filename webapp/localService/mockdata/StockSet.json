@@ -1,0 +1,16 @@
+[
+{
+    "MaterialNumber": "MAT001",
+    "MaterialText": "Producto A",
+    "Plant": "1000",
+    "UnrestrictedStock": 150,
+    "BaseUnit": "UN"
+},
+{
+    "MaterialNumber": "MAT002",
+    "MaterialText": "Producto B",
+    "Plant": "2000",
+    "UnrestrictedStock": 40,
+    "BaseUnit": "UN"
+}
+]

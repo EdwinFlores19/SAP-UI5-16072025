@@ -1,0 +1,73 @@
+/* ==========================================
+Estilos Globales de la Aplicación Fiori
+Proyecto: Resumen de Stock
+Autor: Edwin Flores
+   ========================================== */
+
+/* Asegura un margen uniforme en la aplicación */
+.sapUiBody {
+    background-color: #f9f9f9; /* tono suave para mejor contraste */
+    font-family: "72", "72full", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título principal de la página */
+#stockTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0a6ed1; /* color corporativo SAP */
+    margin-left: 1rem;
+}
+
+/* Ajuste visual para el toolbar */
+#stockToolbar {
+    padding: 0.5rem 1rem;
+    background-color: #eef2f5;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+/* Estilo para columnas de la tabla */
+#stockTable .sapMColumnHeader {
+    font-weight: bold;
+    color: #333333;
+    background-color: #fafafa;
+}
+
+/* Ajusta la altura de las filas para mejor legibilidad */
+#stockTable .sapMLIB {
+    min-height: 3rem;
+}
+
+/* Mejora visual del identificador de material */
+#objIdMaterial .sapMObjectIdentifierTitle {
+    font-weight: bold;
+    color: #0854a0;
+}
+
+/* Colorea visualmente el ObjectNumber según su estado */
+.sapMObjectNumberStatusPositive {
+    color: #107e3e; /* Verde */
+}
+.sapMObjectNumberStatusCritical {
+    color: #e9730c; /* Naranja */
+}
+.sapMObjectNumberStatusNegative {
+    color: #bb0000; /* Rojo */
+}
+
+/* Estado del stock (ObjectStatus) */
+#objStatusStock.sapMObjectStatus {
+    font-weight: 600;
+}
+
+/* Responsive padding para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    #stockTable {
+        font-size: 0.9rem;
+    }
+
+    #stockTitle {
+        font-size: 1.2rem;
+    }
+}

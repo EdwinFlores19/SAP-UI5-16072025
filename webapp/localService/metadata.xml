@@ -1,0 +1,29 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <!-- 1. El Schema define el namespace de nuestro servicio simulado -->
+        <Schema Namespace="ZSTOCK_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            
+            <!-- 2. EntityType: Define la estructura de un solo objeto (una fila de la tabla de stock) -->
+            <EntityType Name="Stock" sap:content-version="1">
+                <!-- 3. Key: Define el campo clave único para esta entidad -->
+                <Key>
+                    <PropertyRef Name="MaterialNumber" />
+                </Key>
+                <!-- 4. Property: Define cada campo (columna) del objeto con su tipo de dato -->
+                <Property Name="MaterialNumber" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Material" />
+                <Property Name="MaterialText" Type="Edm.String" MaxLength="40" sap:label="Description" />
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" />
+                <Property Name="UnrestrictedStock" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="BaseUnit" sap:label="Unrestricted" />
+                <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:label="UoM" sap:semantics="unit-of-measure" />
+            </EntityType>
+
+            <!-- 5. EntityContainer: Es el contenedor de nuestros conjuntos de datos -->
+            <EntityContainer Name="ZSTOCK_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="json,xml">
+                <!-- 6. EntitySet: Define la colección de nuestros objetos Stock. Este es el nombre que usamos en la vista ('/StockSet') -->
+                <EntitySet Name="StockSet" EntityType="ZSTOCK_SRV.Stock" sap:content-version="1" />
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
